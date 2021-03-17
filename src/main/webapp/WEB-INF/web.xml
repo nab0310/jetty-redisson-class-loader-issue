@@ -1,0 +1,14 @@
+<web-app metadata-complete="false">
+    <display-name>Hello World Service</display-name>
+
+    <servlet>
+        <servlet-name>Hello</servlet-name>
+        <servlet-class>
+            org.example.HelloWorld
+        </servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Hello</servlet-name>
+        <url-pattern>/hello/*</url-pattern>
+    </servlet-mapping>
+</web-app>
