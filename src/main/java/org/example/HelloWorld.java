@@ -5,6 +5,7 @@ import javax.servlet.ServletException;
 import java.io.IOException;
 
 import org.redisson.api.*;
+import org.redisson.codec.MarshallingCodec;
 import org.redisson.config.Config;
 import org.redisson.transaction.TransactionException;
 
@@ -20,6 +21,7 @@ public class HelloWorld extends HttpServlet
     Config redissonConfig = new Config();
 
     redissonConfig
+        .setCodec(new MarshallingCodec(getClass().getClassLoader()))
         .useSingleServer()
         .setConnectTimeout(10_000)
         .setTimeout(10_000)
